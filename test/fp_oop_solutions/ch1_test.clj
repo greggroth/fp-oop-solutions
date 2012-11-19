@@ -1,21 +1,16 @@
 (ns fp-oop-solutions.ch1-test
-  (:use clojure.test
+  (:use midje.sweet
         fp-oop-solutions.ch1))
 
-(deftest test-second
-  (is (= 2 (second '(1 2 3 4 5)))))
+(fact (second '(1 2 3 4 5)) => 2)
 
-(deftest test-third
-  (is (= 3 (third '(1 2 3 4 5)))))
+(fact (third '(1 2 3 4 5)) => 3)
 
-(deftest test-square
-  (is (= 25 (square 5)))
-  (is (= 36 (square 6))))
+(fact (square 5) => 25)
+(fact (square 6) => 36)
 
-(deftest test-prefix-of?
-  (is (= true  (prefix-of? '(1 2) '(1 2 3 4))))
-  (is (= false (prefix-of? '(2 3) '(1 2 3 4))))
-  (is (= false (prefix-of? '(1 3) '(1 2 3 4)))))
+(fact (prefix-of? '(1 2) '(1 2 3 4)) => true)
+(fact (prefix-of? '(2 3) '(1 2 3 4)) => false)
+(fact (prefix-of? '(1 3) '(1 2 3 4)) => false)
 
-(deftest test-tails
-  (is (= '((1 2 3 4) (2 3 4) (3 4) (4) ()) (tails '(1 2 3 4)))))
+(fact (tails '(1 2 3 4)) => '((1 2 3 4) (2 3 4) (3 4) (4) ()))
