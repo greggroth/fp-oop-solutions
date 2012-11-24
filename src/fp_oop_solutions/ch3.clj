@@ -2,7 +2,7 @@
 
 (load-file "src/fp_oop_solutions/sources/add-and-make.clj")
 
-; Ex 3
+; Ex 1
 (def add1
   (fn [point1 point2]
     (Point (+ (x point1) (x point2))
@@ -12,5 +12,5 @@
   (fn [point1 point2]
     (shift point1 (x point2) (y point2))))
 
-; Ex 4
+; Ex 2
 (defn make [klass & args] (apply klass args))
