@@ -28,7 +28,8 @@
   {
     :add-instance-values (fn [this x y]
                            (assoc this :x x :y y))
-    :class :__class_symbol__
+    :class class-from-instance
+    :class-name :__class_symbol__
     :shift (fn [this xinc yinc]
              (make Point (+ (:x this) xinc)
                          (+ (:y this) yinc)))
