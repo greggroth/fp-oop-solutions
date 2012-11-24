@@ -13,3 +13,7 @@
 (fact (make Triangle point1 point2 point3) => (contains {:point1 point1,
                                                          :point2 point2,
                                                          :point3 point3}))
+
+(fact (equal-triangles? right-triangle right-triangle) => true)
+(fact (equal-triangles? right-triangle equal-right-triangle) => true)
+(fact (equal-triangles? right-triangle different-triangle) => false)
