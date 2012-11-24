@@ -16,5 +16,5 @@
 (defn make [klass & args] (apply klass args))
 
 ; Ex 3
-(defn equal-triangles? [triangle1, triangle2]
-  (= triangle1 triangle2))
+(defn equal-triangles? [& triangles]
+  (apply = triangles))
