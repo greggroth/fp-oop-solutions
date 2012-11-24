@@ -12,3 +12,5 @@
   (fn [point1 point2]
     (shift point1 (x point2) (y point2))))
 
+; Ex 4
+(defn make [klass & args] (apply klass args))
