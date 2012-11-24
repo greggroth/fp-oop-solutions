@@ -18,3 +18,6 @@
 (fact (equal-triangles? right-triangle equal-right-triangle) => true)
 (fact (equal-triangles? right-triangle different-triangle) => false)
 (fact (equal-triangles? right-triangle equal-right-triangle different-triangle) => false)
+
+(fact (valid-triangle? point1 point2 point3) => true)
+(fact (valid-triangle? point1 point1 point2) => false)

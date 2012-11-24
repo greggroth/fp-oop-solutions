@@ -16,5 +16,8 @@
 (defn make [klass & args] (apply klass args))
 
 ; Ex 3
-(defn equal-triangles? [& triangles]
-  (apply = triangles))
+(def equal-triangles? =)
+
+; Ex 5
+(defn valid-triangle? [& points]
+  (= (distinct points) points))
