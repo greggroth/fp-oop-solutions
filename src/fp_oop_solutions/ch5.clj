@@ -10,7 +10,10 @@
 
 (def apply-message-to
      (fn [class instance message args]
-       (apply (method-from-message message class) instance args)))
+       (let [method (method-from-message message class)]
+         (try
+           (apply method instance args)
+           (catch Exception e (message instance))))))
 
 (def make
      (fn [class & args]
@@ -19,7 +22,7 @@
 
 (def send-to
      (fn [instance message & args]
-       (apply-message-to (class-from-instance instance) instance message args)))
+         (apply-message-to (class-from-instance instance) instance message args)))
 
 (def Point
 {
